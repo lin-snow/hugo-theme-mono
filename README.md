@@ -1,10 +1,10 @@
-# Mono — 极简轻量 Hugo 博客主题
+# Mono — 极简轻量 Hugo 博客主题  
 
 Mono 是一款专注博客内容的极简 Hugo 主题，仅包含博客首页、文章列表和友链页面，设计轻量，简洁，完全遵循最新版 Hugo 目录结构规范。
 
 ---
 
-## 主题特点
+## 主题特点  
 
 - 纯博客主题，专注内容展示  
 - 主页展示最新文章列表  
@@ -15,8 +15,8 @@ Mono 是一款专注博客内容的极简 Hugo 主题，仅包含博客首页、
 
 ---
 
-## 安装
-### 前置条件
+## 安装  
+### 前置条件  
 Hugo Version：`hugo v0.147.5+extended`  
 Node Version: `v22.15.0`  
 PNPM Version: `9.15.5`  
@@ -31,7 +31,7 @@ hugo new site myblog
 git clone https://github.com/lin-snow/hugo-theme-mono.git themes/hugo-theme-mono  
 ```
 
-3. 添加依赖
+3. 添加依赖  
 ```shell
 pnpm install --save-dev tailwindcss @tailwindcss/cli 
 ```
@@ -84,11 +84,20 @@ theme = "hugo-theme-mono"
 hugo server
 ```
 
-5. 导入友链数据(在根目录的data文件夹创建`friends.yml`并写入)：
+5. 创建友链页面：
+在根目录的data文件夹创建`friends.yml`并写入  
 ```yml  
 - name: "L1nSn0w's Log"
   url: "https://log.vaaat.com/"
 
 - name: "Soopy~"
   url: "https://soopy.cn/"
+```
+在`content/pages/friends/`下创建`index.md`并写入  
+```markdown
+---
+title: L1nSn0w の 小伙伴们
+layout: "links"
+slug: /links
+---
 ```
