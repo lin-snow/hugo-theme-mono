@@ -7,11 +7,13 @@
 <!-- Articles -->
 {{- $paginator := .Paginate site.RegularPages -}}
 {{- range $index, $page := $paginator.Pages -}}
+{{ if and (ne .Page.Layout "links") (ne .Page.Layout "about")}}
 <section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0 hover:text-amber-800">
   <h2 class="font-bold text-3xl">{{- .Title -}}</h2>
   <time class="text-xs antialiased opacity-60">{{- .Date | time.Format ":date_medium" -}}</time>
   <a class="absolute inset-0 text-[0px]" href="{{- .Permalink -}}">{{- .Title -}}</a>
 </section>
+{{- end -}}
 {{- end -}}
 
 <!-- Main Nav -->
