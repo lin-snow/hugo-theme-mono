@@ -1,0 +1,18 @@
+<!-- view-image灯箱插件 -->
+<script src="/js/view-image.min.js"></script>
+
+<script>
+  window.ViewImage && ViewImage.init('.md img');
+</script>
+
+<!-- 图片居中 -->
+<script>
+const paragraphs = document.querySelectorAll('article.md p');
+
+paragraphs.forEach(p => {
+    // 判断 p 标签中是否包含 img 标签
+    if (p.querySelector('img')) {
+        p.classList.add('has-image'); // 添加居中和有图片的样式
+    } 
+});
+</script>

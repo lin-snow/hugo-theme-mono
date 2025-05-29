@@ -1,0 +1,5 @@
+<img src="{{ .Destination | safeURL }}" 
+    loading="lazy" 
+    decoding="async" 
+    alt="{{ .Text | default `No description` }}" 
+    {{ with .Title }} title="{{ . | safeHTML }}" {{ end }} view-image />

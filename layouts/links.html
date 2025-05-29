@@ -1,0 +1,14 @@
+{{ define "main" }}
+
+<div class="w-full my-4 p-1">
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+    {{ range .Site.Data.friends }}
+    <a href="{{ .url }}" class="px-4 py-2 bg-[#f0f0f0] text-gray-600 font-bold font-serif rounded hover:shadow-md transition-colors shadow-sm text-center" target="_blank" rel="noopener">
+      {{ .name }}
+    </a>
+    {{ end }}
+  </div>
+</div>
+
+{{ partial "comment.html" .}}
+{{ end }}

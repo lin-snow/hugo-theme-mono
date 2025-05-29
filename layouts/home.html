@@ -1,0 +1,37 @@
+{{ define "main" }}
+
+<!-- 文章列表 -->
+<p class="my-2 text-sm text-amber-700">近期文章：</p>
+
+
+<!-- Articles -->
+{{- $paginator := .Paginate site.RegularPages -}}
+{{- range $index, $page := $paginator.Pages -}}
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0 hover:text-amber-800">
+  <h2 class="font-bold text-3xl">{{- .Title -}}</h2>
+  <time class="text-xs antialiased opacity-60">{{- .Date | time.Format ":date_medium" -}}</time>
+  <a class="absolute inset-0 text-[0px]" href="{{- .Permalink -}}">{{- .Title -}}</a>
+</section>
+{{- end -}}
+
+<!-- Main Nav -->
+{{- if gt $paginator.TotalPages 1 -}}
+<nav class="mt-14 flex">
+  {{- if $paginator.HasPrev -}}
+<div class=" shadow-sm rounded-lg" style="background-color: #192d23;">
+  <a class="not-prose text-white block w-full h-full px-3 py-2" href="{{- $paginator.Prev.URL -}}">
+    ← <span>上一页</span>
+  </a>
+</div>
+  {{- end -}}
+  {{- if $paginator.HasNext -}}
+  <div class="shadow-sm rounded-lg ml-auto" style="background-color: #192d23;">
+    <a class="not-prose ml-auto text-white block w-full h-full px-3 py-2" href="{{- $paginator.Next.URL -}}">
+      <span>下一页</span> →
+    </a>
+  </div>
+  {{- end -}}
+</nav>
+{{- end -}}
+
+{{ end }}

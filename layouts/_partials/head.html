@@ -1,0 +1,26 @@
+<meta charset="utf-8" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, shrink-to-fit=no"
+/>
+<title>
+  {{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title
+  site.Title }}{{ end }}
+</title>
+{{ partialCached "head/css.html" . }} {{ partialCached "head/js.html" . }}
+
+<!-- 网站描述、关键字和作者 -->
+<meta name="description" content="{{ .Site.Params.description }}" />
+<meta name="keywords" content="{{ with .Params.keywords }}{{ delimit . ", " }}{{
+else }}{{ .Site.Params.keywords }}{{ end }}">
+<meta name="author" content="{{ .Site.Params.author }}" />
+
+<link
+  rel="apple-touch-icon"
+  sizes="180x180"
+  href="{{ "/apple-touch-icon.png" | relURL }}"
+/>
+
+<!-- 引入本地字体 -->
+<link rel="stylesheet" href="{{ "/fonts/LXGW/result.css" | relURL }}">
+

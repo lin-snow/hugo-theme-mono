@@ -1,0 +1,22 @@
+{{ define "main" }}
+  <h1 class="text-3xl font-bold font-serif my-3 text-gray-800">{{ .Title }}</h1>
+
+  {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+  {{ $dateHuman := .Date | time.Format ":date_long" }}
+  <div class="flex items-center my-3">
+    <time class="text-sm font-serif text-gray-500" datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+    <span>
+      {{ with site.Params.author }}
+        <span class="mx-2"> · </span>
+        <span class="text-sm font-serif text-gray-500">{{ . }}</span>
+      {{ end }}
+    </span>
+  </div>
+
+  <article class="md">
+    {{ .Content }}
+  </article>
+
+  {{ partial "comment.html" . }}
+
+{{ end }}

@@ -1,0 +1,11 @@
+@import "tailwindcss";
+@source "hugo_stats.json";
+@import "./md.css";
+
+html, body {
+  /* font-family: 'LXGW WenKai Screen'; */
+  /* font-family: 'Ark Pixel Mono'; */
+  /* background-color: #f4f1ec; */
+  background-color: rgb(238 236 234);
+  color: #464442;
+}
