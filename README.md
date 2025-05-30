@@ -74,9 +74,6 @@ theme = "hugo-theme-mono"
       wrapStandAloneImageWithinParagraph = false
       [markup.goldmark.parser.attribute]
         block = true
-
-[outputs]
-  disableKinds = ['rss']
 ```
 
 4. 启动网站：  
