@@ -86,8 +86,8 @@
 }
 
 .md strong {
-    @apply text-gray-800 font-normal;
-    font-size: 1.3rem;
+    @apply text-gray-500 font-bold;
+    font-size: 1.2rem;
 }
 
 .md pre {
@@ -205,7 +205,7 @@
 .md p:has(> img:nth-child(2)) {
   column-count: 2;
   column-gap: 8px;
-  margin: 6px 0;
+  margin: 8px 0;
 }
 .md p:has(> img:nth-child(3)) {
   column-count: 3;
